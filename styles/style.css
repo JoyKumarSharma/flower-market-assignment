@@ -1,38 +1,25 @@
-/* Google Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Basic Reset & Box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #E55473; /* Pink */
-    --primary-light-bg: rgba(229, 84, 115, 0.05); /* Light pink tint */
-    --dark-text-color: #111827; /* Dark text for headings */
-    --paragraph-color: rgba(39, 39, 39, 0.60); /* Lighter gray for paragraphs */
-    --accent-orange-color: #FF8C00; /* DarkOrange for accent */
-    --white-color: #fff;
-    --light-gray-footer: #ccc; /* For footer links */
-    --footer-text-color-light: rgba(255, 255, 255, 0.8); /* Used for copyright and description */
-}
-
 body {
     font-family: "Work Sans", sans-serif;
     font-size: 16px;
-    color: var(--dark-text-color);
+    color: #111827;
     line-height: 1.6;
 }
 
-/* Common Reusable Classes / Utility Classes */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* --- Common Utility Classes --- */
 .display-flex {
     display: flex;
 }
@@ -57,30 +44,51 @@ body {
     text-align: left;
 }
 
-.text-primary {
-    color: var(--primary-color);
+/* --- Color Classes --- */
+.text-primary,
+.nav-links a:hover,
+.nav-links a:hover .cart-icon,
+footer .logo-title .text-primary {
+    color: #E95A08;
 }
-
+/* plant er dam style */
+.plant-price{
+    font-weight: 700;
+}
+.plant-name{
+    font-style: initial ;
+}
 .text-accent-orange {
-    color: var(--accent-orange-color);
+    color: #FF8C00;
 }
 
 .text-white {
-    color: var(--white-color);
+    color: #fff;
 }
 
-/* Specific text color for elements that are dark on a white background, like footer logo */
 .text-dark-text-color {
-    color: var(--dark-text-color);
+    color: #111827;
 }
 
 .bg-primary-light {
-    background-color: var(--primary-light-bg);
+    background-color: rgba(233, 90, 8, 0.05);
+}
+/* add to card button style */
+.btn-secondary add-to-cart{
+    background-color: #E95A08;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* --- Button Styles --- */
 .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--white-color);
+    background-color: #E95A08;
+    color: #fff;
     border: none;
     padding: 15px 30px;
     border-radius: 8px;
@@ -93,13 +101,13 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #d14364;
+    background-color: #C44D07;
 }
 
 .btn-secondary {
-    background-color: var(--white-color);
-    color: var(--dark-text-color);
-    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #111827;
+    border: 1px solid #E95A08;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 0.9rem;
@@ -108,15 +116,16 @@ body {
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border-color: var(--primary-color);
+    background-color: #E95A08;
+    color: #fff;
+    border-color: #E95A08;
 }
 
+/* Updated .btn-transparent-white specifically for "Shop Now" button in deal cards */
 .btn-transparent-white {
-    background-color: transparent;
-    color: var(--white-color);
-    border: 1px solid var(--white-color);
+    background-color: #fff; /* White background */
+    color: #E95A08; /* Primary text color */
+    border: none; /* No border */
     padding: 10px 25px;
     border-radius: 8px;
     font-size: 1rem;
@@ -124,40 +133,44 @@ body {
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 2px; /* User requested 2/3px margin-bottom */
 }
 
 .btn-transparent-white:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #C44D07; /* Darker primary color on hover */
+    color: #fff; /* White text on hover */
 }
 
 
+/* --- Section Title & Description --- */
 .section-title {
     font-size: 2.8rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    color: var(--dark-text-color);
+    color: #111827;
 }
 
-.section-description {
+.section-description,
+footer .footer-description,
+.copyright {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 30px;
-    color: var(--paragraph-color);
+    color: rgba(39, 39, 39, 0.60);
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
+.section-description {
+    margin-bottom: 30px;
+}
 
-/* General Section Spacing */
 main section {
     padding: 130px 0;
 }
 
 
-/* --------------------
-    Header & Navbar Styles
------------------------ */
+/* --- Header Styles --- */
 header {
     min-height: 100vh;
     display: flex;
@@ -183,7 +196,7 @@ nav {
 .logo-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--dark-text-color);
+    color: #111827;
 }
 
 .nav-links li {
@@ -193,7 +206,7 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--dark-text-color);
+    color: #111827;
     font-weight: 500;
     transition: color 0.3s ease;
     display: flex;
@@ -201,28 +214,15 @@ nav {
     gap: 8px;
 }
 
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-/* Cart Icon Styling (Font Awesome) */
 .cart-icon {
-    font-size: 24px; /* Adjust size as needed */
-    color: var(--dark-text-color); /* Default color for icon */
-}
-
-/* This makes sure the icon color changes on hover like other nav links */
-.nav-links a:hover .cart-icon {
-    color: var(--primary-color);
+    font-size: 24px;
+    color: #111827;
 }
 
 .cart-text {
     display: inline-block;
 }
 
-/* --------------------
-    Banner Styles
------------------------ */
 .banner {
     flex-grow: 1;
     padding-top: 50px;
@@ -239,7 +239,7 @@ nav {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 25px;
-    color: var(--dark-text-color);
+    color: #111827;
 }
 
 .banner-image {
@@ -253,9 +253,7 @@ nav {
     display: block;
 }
 
-/* --------------------
-    Plants Section
------------------------ */
+/* --- Plants Section --- */
 .plants-section {
     padding-top: 130px;
     padding-bottom: 130px;
@@ -304,13 +302,7 @@ nav {
     font-weight: 700;
     font-size: 1.25rem;
     margin-bottom: 10px;
-    color: var(--dark-text-color);
-}
-
-.plant-price {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
+    color: #111827;
 }
 
 .plant-card .add-to-cart {
@@ -319,15 +311,12 @@ nav {
 }
 
 
-/* --------------------
-    Plants Lover Section
------------------------ */
+/* --- Plants Lover Section --- */
 .plants-lover-section {
-    background-color: var(--primary-light-bg);
+    background-color: rgba(233, 90, 8, 0.05);
     gap: 50px;
 }
 
-/* Desktop: Content on left, Image on right */
 .plants-lover-content {
     flex: 1;
     order: 1;
@@ -356,9 +345,7 @@ nav {
     z-index: 10;
 }
 
-/* --------------------
-    Latest Deal Section (Challenge Part)
------------------------ */
+/* --- Latest Deal Section --- */
 .latest-deal-section {
     padding-top: 130px;
     padding-bottom: 130px;
@@ -398,7 +385,7 @@ nav {
 }
 
 .deal-card-content {
-    color: var(--white-color);
+    color: #fff;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -409,14 +396,17 @@ nav {
 .deal-card-discount {
     font-size: 2.5rem;
     font-weight: 800;
-    line-height: 1;
+    
+    background-color: no color(srgb red green blue); /* Primary color background for the box */
+    color: #fff; /* White text */
+    margin-left: 2px white;
 }
 
 .deal-card-divider {
     width: 50%;
     border: none;
-    border-top: 1px solid var(--white-color);
-    margin: 10px 0;
+    border-top: 1px solid #fff;
+    margin:  0;
 }
 
 .deal-card-title {
@@ -426,15 +416,17 @@ nav {
     margin-bottom: 0;
 }
 
-/* --------------------
-    Join Section
------------------------ */
+.deal-card-discount, .deal-card-title {
+    display: flex;
+}
+
+/* --- Join Section --- */
 .join-section {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 100px 0;
-    color: var(--white-color);
+    color: #fff;
 }
 
 .join-form {
@@ -455,29 +447,22 @@ nav {
     border-radius: 8px;
     font-size: 1rem;
     outline: none;
-    color: var(--dark-text-color);
+    color: #111827;
 }
 
 .email-input::placeholder {
     color: #999;
 }
 
-/* --------------------
-    Footer Section
------------------------ */
+/* --- Footer Styles --- */
 footer {
-    background-color: var(--white-color);
+    background-color: #fff;
     padding: 80px 0;
     text-align: center;
 }
 
-/* Adjusted colors for elements within a white footer */
 footer .logo-title {
-    color: var(--dark-text-color);
-}
-
-footer .logo-title .text-primary {
-    color: var(--primary-color);
+    color: #111827;
 }
 
 .footer-top {
@@ -497,10 +482,7 @@ footer .logo-title .text-primary {
 }
 
 .footer-description {
-    font-size: 0.9rem;
-    max-width: 600px;
     margin: 0 auto 30px auto;
-    color: var(--paragraph-color);
 }
 
 .footer-links-wrapper {
@@ -508,27 +490,38 @@ footer .logo-title .text-primary {
     gap: 50px;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: left;
 }
 
-.footer-links-col {
+.footer-links-col,
+.footer-links-group {
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: left;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .footer-links-col a {
     text-decoration: none;
-    color: var(--dark-text-color);
+    color: #111827;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .footer-links-col a:hover {
-    color: var(--primary-color);
+    color: #E95A08;
 }
+
+.footer-heading-new {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
 
 .social-icons {
     gap: 20px;
@@ -547,14 +540,10 @@ footer .logo-title .text-primary {
 
 .copyright {
     font-size: 0.85rem;
-    color: var(--paragraph-color);
 }
 
-/* --------------------
-    Responsive Styles (max-width: 768px for mobile/tablet)
------------------------ */
+/* --- Media Queries --- */
 @media screen and (max-width: 768px) {
-    /* General Adjustments */
     .container {
         padding: 0 15px;
     }
@@ -571,7 +560,6 @@ footer .logo-title .text-primary {
         font-size: 0.9rem;
     }
 
-    /* Navbar Mobile */
     .nav-links li:not(.cart-link) {
         display: none;
     }
@@ -588,7 +576,6 @@ footer .logo-title .text-primary {
         padding: 0;
     }
 
-    /* Banner Mobile */
     .banner {
         flex-direction: column;
         text-align: center;
@@ -616,7 +603,6 @@ footer .logo-title .text-primary {
         order: 1;
     }
 
-    /* Plants Section Mobile */
     .plant-cards-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -626,7 +612,6 @@ footer .logo-title .text-primary {
         height: 200px;
     }
 
-    /* Plants Lover Section Mobile */
     .plants-lover-section {
         flex-direction: column;
         text-align: center;
@@ -646,28 +631,33 @@ footer .logo-title .text-primary {
         display: none;
     }
 
-    /* Latest Deal Section Mobile */
     .deal-cards-grid {
         grid-template-columns: 1fr;
         max-width: 300px;
         margin: 50px auto 0 auto;
     }
 
-    /* Join Section Mobile */
+    /* Mobile adjustment for discount tag */
+    .deal-card-discount {
+        margin-right: auto;
+        margin-left: 0;
+    }
+
     .join-section {
         padding: 60px 0;
     }
 
     .join-form {
         flex-direction: column;
-        gap: 10px;
+        gap: 0px;
     }
 
     .email-input {
         width: 100%;
     }
-
-    /* Footer Section Mobile */
+           .email-input, .joint-form{
+            display: flex;
+           }
     footer {
         padding: 50px 0;
     }
@@ -678,12 +668,228 @@ footer .logo-title .text-primary {
         align-items: center;
     }
 
-    .footer-links-col {
+    .footer-links-col, .footer-links-group {
         align-items: center;
+        text-align: center;
+    }
+
+    .footer-heading-new {
         text-align: center;
     }
 
     .social-icons {
         flex-wrap: wrap;
+    }
+}
+
+
+/* plants lover edited design ekane  */
+.plants-lover-section {
+    background-color: rgba(233, 90, 8, 0.05);
+    gap: 50px;
+    display: flex;
+    align-items: center;
+    padding: 130px 0;
+}
+
+.plants-lover-content {
+    flex: 1;
+    order: 2;
+}
+
+.plants-lover-image-container {
+    flex: 1;
+    position: relative;
+    order: 1;
+}
+
+.plants-lover-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.trusted-badge {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: auto;
+    z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+    .plants-lover-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .plants-lover-content {
+        order: 2;
+        text-align: left;
+    }
+
+    .plants-lover-image-container {
+        margin-bottom: 30px;
+        order: 1;
+    }
+
+    .trusted-badge {
+        display: none;
+    }
+}
+
+/* trusted badge  */
+.plants-lover-image-container {
+    position: relative;}
+
+
+.trusted-badge {
+   
+    top: -70px;  
+    left: 50%;
+    
+    width: 150px;
+    height: auto;
+    
+}
+
+/* grid e add korar jonne  */
+.deal-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    height: 800px;
+}
+
+.deal-cards-grid > div:nth-child(1) {
+    height: 100%;
+}
+
+.deal-cards-grid > div:nth-child(2) {
+    height: 100%;
+}
+
+.deal-cards-grid > div:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    height: 100%;
+}
+
+.deal-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.deal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.deal-card-content {
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.deal-card-discount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left: 0;
+    width: fit-content;
+}
+
+.deal-card-divider {
+    width: 50%;
+    border: none;
+    border-top: 1px solid #fff;
+    margin: 10px 0;
+}
+
+.deal-card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.btn-transparent-white {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+    margin-bottom: 2px;
+}
+
+.btn-transparent-white::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+
+
+
+.btn-transparent-white:hover {
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .deal-cards-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+        max-width: 300px;
+        margin: 50px auto 0 auto;
+    }
+
+    .deal-cards-grid > div:nth-child(1),
+    .deal-cards-grid > div:nth-child(2),
+    .deal-cards-grid > div:nth-child(3) {
+        grid-column: auto;
+        grid-row: auto;
+        height: 400px;
     }
 }
