@@ -51,6 +51,10 @@ body {
 footer .logo-title .text-primary {
     color: #E95A08;
 }
+
+/* nav logo side e ana */
+
+
 /* plant er dam style */
 .plant-price{
     font-weight: 700;
@@ -567,7 +571,7 @@ footer .logo-title {
         display: none;
     }
 
-    .nav-logo {
+    .nav-logo img {
          display: flex;
     
     gap: 10px;
@@ -607,6 +611,10 @@ footer .logo-title {
     .banner-image {
         text-align: center;
         order: 1;
+    }
+
+    .text-accent-black{
+        color: #1e9c5f;
     }
 
     .plant-cards-grid {
@@ -976,4 +984,18 @@ footer .logo-title {
     .plant-card .add-to-cart {
         margin-top: 10px; /* Add some space above the button */
     }
+}
+
+.nav-logo {
+    margin-left: -20px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-logo {
+        margin-left: -15px;
+    }
+}
+
+.text-accent-black{
+    color: #000000;
 }
