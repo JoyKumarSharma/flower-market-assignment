@@ -8,18 +8,29 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #E55473; /* Pink */
+    --primary-light-bg: rgba(229, 84, 115, 0.05); /* Light pink tint */
+    --dark-text-color: #111827; /* Dark text for headings */
+    --paragraph-color: rgba(39, 39, 39, 0.60); /* Lighter gray for paragraphs */
+    --accent-orange-color: #FF8C00; /* DarkOrange for accent */
+    --white-color: #fff;
+    --light-gray-footer: #ccc; /* For footer links */
+    --footer-text-color-light: rgba(255, 255, 255, 0.8); /* Used for copyright and description */
+}
+
 body {
-    font-family: "Work Sans", sans-serif; /* Base font family */
-    font-size: 16px; /* Base font size */
-    color: #333; /* Default text color */
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    color: var(--dark-text-color);
     line-height: 1.6;
 }
 
 /* Common Reusable Classes / Utility Classes */
 .container {
-    max-width: 1200px; /* Adjusted max width for content based on typical designs */
-    margin: 0 auto; /* Center the container */
-    padding: 0 20px; /* Add some horizontal padding for smaller screens */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .display-flex {
@@ -47,24 +58,33 @@ body {
 }
 
 .text-primary {
-    color: #E55473; /* Primary accent color */
+    color: var(--primary-color);
+}
+
+.text-accent-orange {
+    color: var(--accent-orange-color);
 }
 
 .text-white {
-    color: #fff;
+    color: var(--white-color);
+}
+
+/* Specific text color for elements that are dark on a white background, like footer logo */
+.text-dark-text-color {
+    color: var(--dark-text-color);
 }
 
 .bg-primary-light {
-    background-color: rgba(229, 84, 115, 0.05); /* Light background for header/banner */
+    background-color: var(--primary-light-bg);
 }
 
 .btn-primary {
-    background-color: #E55473; /* Primary button color */
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     border: none;
     padding: 15px 30px;
     border-radius: 8px;
-    font-size: 1.15rem; /* Adjusted slightly */
+    font-size: 1.15rem;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
@@ -73,48 +93,65 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #d14364; /* Darker shade on hover */
+    background-color: #d14364;
 }
 
 .btn-secondary {
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #ccc; /* Example border */
+    background-color: var(--white-color);
+    color: var(--dark-text-color);
+    border: 1px solid #ccc;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .btn-secondary:hover {
-    background-color: #E55473;
-    color: #fff;
-    border-color: #E55473;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+}
+
+.btn-transparent-white {
+    background-color: transparent;
+    color: var(--white-color);
+    border: 1px solid var(--white-color);
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-transparent-white:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 
 .section-title {
-    font-size: 2.8rem; /* Adjusted for impact */
+    font-size: 2.8rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    color: #111827; /* Dark text for titles */
+    color: var(--dark-text-color);
 }
 
 .section-description {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 30px;
-    color: rgba(39, 39, 39, 0.60); /* Lighter gray for paragraphs */
-    max-width: 700px; /* Constrain paragraph width */
+    color: var(--paragraph-color);
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
 /* General Section Spacing */
 main section {
-    padding: 130px 0; /* Adjust vertical spacing between main sections */
+    padding: 130px 0;
 }
 
 
@@ -122,11 +159,11 @@ main section {
     Header & Navbar Styles
 ----------------------- */
 header {
-    min-height: 100vh; /* Make header full height of viewport */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 50px; /* Space for banner below nav */
+    padding-bottom: 50px;
 }
 
 nav {
@@ -140,13 +177,13 @@ nav {
 }
 
 .nav-logo img {
-    width: 45px; /* Adjust logo image size */
+    width: 45px;
 }
 
 .logo-title {
-    font-size: 2.5rem; /* Adjusted for clarity */
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #333;
+    color: var(--dark-text-color);
 }
 
 .nav-links li {
@@ -156,7 +193,7 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: var(--dark-text-color);
     font-weight: 500;
     transition: color 0.3s ease;
     display: flex;
@@ -165,15 +202,20 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #E55473;
+    color: var(--primary-color);
 }
 
+/* Cart Icon Styling (Font Awesome) */
 .cart-icon {
-    width: 24px;
-    height: 24px;
+    font-size: 24px; /* Adjust size as needed */
+    color: var(--dark-text-color); /* Default color for icon */
 }
 
-/* Cart text is visible on desktop */
+/* This makes sure the icon color changes on hover like other nav links */
+.nav-links a:hover .cart-icon {
+    color: var(--primary-color);
+}
+
 .cart-text {
     display: inline-block;
 }
@@ -182,14 +224,14 @@ nav {
     Banner Styles
 ----------------------- */
 .banner {
-    flex-grow: 1; /* Allow banner to take remaining space in header */
+    flex-grow: 1;
     padding-top: 50px;
-    gap: 50px; /* Space between content and image */
+    gap: 50px;
 }
 
 .banner-content {
     flex: 1;
-    padding-right: 20px; /* Small padding for text on desktop */
+    padding-right: 20px;
 }
 
 .banner-title {
@@ -197,12 +239,12 @@ nav {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 25px;
-    color: #111827;
+    color: var(--dark-text-color);
 }
 
 .banner-image {
     flex: 1;
-    text-align: right; /* Align image to the right */
+    text-align: right;
 }
 
 .banner-image img {
@@ -221,8 +263,8 @@ nav {
 
 .plant-cards-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
-    gap: 20px; /* Space between cards */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     margin-top: 50px;
 }
 
@@ -232,30 +274,29 @@ nav {
 }
 
 .plant-card-img-container {
-    height: 350px; /* Fixed height for image container */
+    height: 350px;
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Align image to bottom */
-    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    align-items: flex-end;
+    border-radius: 8px 8px 0 0;
     margin-bottom: 20px;
     padding-bottom: 20px;
     position: relative;
 }
 
-/* Background colors for plant cards */
 .img-bg-pink {
-    background-color: rgba(167, 33, 98, 0.15); /* Example pinkish background */
+    background-color: rgba(167, 33, 98, 0.15);
 }
 .img-bg-blue {
-    background-color: rgba(5, 151, 160, 0.15); /* Example bluish background */
+    background-color: rgba(5, 151, 160, 0.15);
 }
 .img-bg-green {
-    background-color: rgba(71, 125, 17, 0.15); /* Example greenish background */
+    background-color: rgba(71, 125, 17, 0.15);
 }
 
 .plant-image {
-    max-width: 80%; /* Ensure image fits */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 80%;
+    height: auto;
     display: block;
 }
 
@@ -263,22 +304,18 @@ nav {
     font-weight: 700;
     font-size: 1.25rem;
     margin-bottom: 10px;
-    color: #333;
+    color: var(--dark-text-color);
 }
 
 .plant-price {
     font-size: 1.1rem;
-    color: #E55473; /* Primary color for price */
+    color: var(--primary-color);
     margin-bottom: 15px;
 }
 
-/* Hide Add to Cart button on desktop by default as per screenshot, or if it's meant to appear on hover.
-   If always visible, remove `display: none;` here and use it in hover.
-   For simplicity of this full code, let's assume it's always visible by default for desktop for now,
-   and if Figma shows hover, you'll add that. */
 .plant-card .add-to-cart {
-    display: block; /* Make it visible */
-    margin: 0 auto; /* Center the button */
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -286,55 +323,37 @@ nav {
     Plants Lover Section
 ----------------------- */
 .plants-lover-section {
-    background-color: rgba(229, 84, 115, 0.05); /* Same as header background */
-    gap: 50px; /* Space between image and content */
+    background-color: var(--primary-light-bg);
+    gap: 50px;
+}
+
+/* Desktop: Content on left, Image on right */
+.plants-lover-content {
+    flex: 1;
+    order: 1;
 }
 
 .plants-lover-image-container {
     flex: 1;
-    position: relative; /* For positioning the badge */
+    position: relative;
+    order: 2;
 }
 
 .plants-lover-image {
     max-width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px; /* Optional: if image has rounded corners */
+    border-radius: 8px;
 }
 
 .trusted-badge {
     position: absolute;
-    top: -30px; /* Adjust as per Figma screenshot */
-    left: 50%; /* Center horizontally over image */
-    transform: translateX(-50%); /* Adjust to true center */
-    width: 150px; /* Adjust size of the badge */
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
     height: auto;
     z-index: 10;
-}
-
-.plants-lover-content {
-    flex: 1;
-}
-
-.plants-lover-content ul {
-    list-style: none; /* Remove default bullets */
-    margin-top: 20px;
-    margin-left: 0;
-}
-
-.plants-lover-content ul li {
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: rgba(39, 39, 39, 0.75);
-    position: relative;
-    padding-left: 25px; /* Space for custom bullet */
-}
-
-.plants-lover-content ul li::before {
-    content: '✅'; /* Custom bullet icon */
-    position: absolute;
-    left: 0;
-    color: #E55473; /* Match primary color */
 }
 
 /* --------------------
@@ -347,64 +366,75 @@ nav {
 
 .deal-cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 50px;
 }
 
 .deal-card {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background-color: #fff;
-    border: 1px solid #eee;
-    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Subtle shadow */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.deal-card img {
-    max-width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: contain; /* Ensure image fits without cropping */
-    margin-bottom: 15px;
+.deal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
 }
 
-.deal-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #111827;
+.deal-card-content {
+    color: var(--white-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
-.deal-card p {
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: rgba(39, 39, 39, 0.8);
+.deal-card-discount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
 }
 
-.deal-card del {
-    color: rgba(39, 39, 39, 0.6);
+.deal-card-divider {
+    width: 50%;
+    border: none;
+    border-top: 1px solid var(--white-color);
+    margin: 10px 0;
 }
 
-.deal-card strong {
-    font-size: 1.2rem;
-    color: #E55473;
-}
-
-.deal-card .btn-primary {
-    margin-top: 20px;
-    padding: 10px 25px;
-    font-size: 1rem;
+.deal-card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* --------------------
     Join Section
 ----------------------- */
 .join-section {
-    background-image: url('../images/news-letter-bg.jpg'); /* Adjusted path */
-    background-size: cover; /* Cover the entire section */
-    background-position: center; /* Center the background image */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    padding: 100px 0; /* Adjust padding as needed */
-    color: #fff; /* Ensure text is white over dark background */
+    padding: 100px 0;
+    color: var(--white-color);
 }
 
 .join-form {
@@ -413,19 +443,19 @@ nav {
     align-items: center;
     gap: 15px;
     margin-top: 40px;
-    max-width: 600px; /* Constrain form width */
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .email-input {
-    flex-grow: 1; /* Allow input to take available space */
+    flex-grow: 1;
     padding: 15px 20px;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
-    outline: none; /* Remove outline on focus */
-    color: #333;
+    outline: none;
+    color: var(--dark-text-color);
 }
 
 .email-input::placeholder {
@@ -436,10 +466,22 @@ nav {
     Footer Section
 ----------------------- */
 footer {
-    background-color: #111827;
-    color: #fff;
+    background-color: var(--white-color);
     padding: 80px 0;
     text-align: center;
+}
+
+/* Adjusted colors for elements within a white footer */
+footer .logo-title {
+    color: var(--dark-text-color);
+}
+
+footer .logo-title .text-primary {
+    color: var(--primary-color);
+}
+
+.footer-top {
+    margin-bottom: 40px;
 }
 
 .footer-logo {
@@ -458,25 +500,34 @@ footer {
     font-size: 0.9rem;
     max-width: 600px;
     margin: 0 auto 30px auto;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--paragraph-color);
 }
 
-.footer-links {
-    list-style: none;
+.footer-links-wrapper {
     margin-bottom: 30px;
-    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
-    gap: 20px; /* Space between links */
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.footer-links a {
+.footer-links-col {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 10px;
+}
+
+.footer-links-col a {
     text-decoration: none;
-    color: #fff;
+    color: var(--dark-text-color);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-    color: #E55473;
+.footer-links-col a:hover {
+    color: var(--primary-color);
 }
 
 .social-icons {
@@ -485,149 +536,135 @@ footer {
 }
 
 .social-icons img {
-    width: 30px; /* Adjust social icon size */
+    width: 30px;
     height: 30px;
     transition: transform 0.3s ease;
 }
 
 .social-icons img:hover {
-    transform: scale(1.1); /* Slight enlarge on hover */
+    transform: scale(1.1);
 }
 
 .copyright {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--paragraph-color);
 }
 
 /* --------------------
-    Responsive Styles (Mobile - max-width: 768px, adjust as needed)
+    Responsive Styles (max-width: 768px for mobile/tablet)
 ----------------------- */
 @media screen and (max-width: 768px) {
-    /* General Adjustments for smaller screens */
+    /* General Adjustments */
     .container {
         padding: 0 15px;
     }
 
     main section {
-        padding: 80px 0; /* Reduce section padding for mobile */
+        padding: 60px 0;
     }
 
     .section-title {
-        font-size: 2rem; /* Smaller title on mobile */
+        font-size: 2rem;
     }
 
     .section-description {
         font-size: 0.9rem;
     }
 
-    /* Header & Navbar Mobile */
-    .nav-links li:not(.cart-link) { /* Hide all menu items EXCEPT cart-link on mobile */
+    /* Navbar Mobile */
+    .nav-links li:not(.cart-link) {
         display: none;
     }
 
     .nav-logo .logo-title {
-        font-size: 2rem; /* Adjust logo title size for mobile */
+        font-size: 2rem;
     }
 
-    /* Ensure cart icon with text is visible on mobile */
     .nav-links .cart-link {
         display: flex;
-        margin-left: auto; /* Push cart to the right if other items are hidden */
+        margin-left: auto;
     }
     .nav-links .cart-link a {
-        padding: 0; /* Remove padding if added for desktop menu items */
+        padding: 0;
     }
-
 
     /* Banner Mobile */
     .banner {
-        flex-direction: column; /* Stack content vertically */
-        text-align: center; /* Center content */
-        padding-top: 30px; /* Adjust padding */
+        flex-direction: column;
+        text-align: center;
+        padding-top: 30px;
     }
 
     .banner-content {
         padding-right: 0;
-        margin-bottom: 30px; /* Space between text and image */
-        order: 2; /* Content after image as per requirement */
+        margin-bottom: 30px;
+        order: 2;
+        text-align: left;
     }
 
     .banner-title {
-        font-size: 2.5rem; /* Smaller title on mobile */
-        text-align: left; /* Content left aligned as Figma */
-    }
-
-    .banner-content .section-description {
-        text-align: left; /* Content left aligned as Figma */
+        font-size: 2.5rem;
+        text-align: left;
     }
 
     .banner-content .btn-primary {
-        float: left; /* Align button to left */
+        float: left;
     }
 
     .banner-image {
         text-align: center;
-        order: 1; /* Image moves to the top */
+        order: 1;
     }
 
     /* Plants Section Mobile */
     .plant-cards-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
 
     .plant-card-img-container {
-        height: 250px; /* Smaller height for mobile cards */
+        height: 200px;
     }
-
 
     /* Plants Lover Section Mobile */
     .plants-lover-section {
-        flex-direction: column; /* Stack content vertically */
-        text-align: center; /* Center content */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .plants-lover-content {
+        order: 2;
+        text-align: left;
     }
 
     .plants-lover-image-container {
         margin-bottom: 30px;
-        order: 1; /* Image moves to the top */
+        order: 1;
     }
 
     .trusted-badge {
-        display: none; /* Hide Trusted badge in Mobile Device */
+        display: none;
     }
 
-    .plants-lover-content {
-        text-align: left; /* Content left aligned as Figma */
-        order: 2; /* Content after image */
-    }
-
-    .plants-lover-content ul {
-        padding-left: 0; /* Remove default list padding */
-    }
-
-    .plants-lover-content ul li {
-        text-align: left;
-    }
-
-    /* Latest Deal Section Mobile (Challenge) */
+    /* Latest Deal Section Mobile */
     .deal-cards-grid {
-        grid-template-columns: 1fr; /* Single column for mobile */
-        max-width: 300px; /* Constrain single card width */
-        margin: 50px auto 0 auto; /* Center single card */
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 50px auto 0 auto;
     }
 
     /* Join Section Mobile */
     .join-section {
-        padding: 60px 0; /* Adjust padding */
+        padding: 60px 0;
     }
 
     .join-form {
-        flex-direction: column; /* Stack input and button */
+        flex-direction: column;
         gap: 10px;
     }
 
     .email-input {
-        width: 100%; /* Full width input */
+        width: 100%;
     }
 
     /* Footer Section Mobile */
@@ -635,66 +672,18 @@ footer {
         padding: 50px 0;
     }
 
-    .footer-links {
-        flex-direction: column; /* Stack links vertically */
-        gap: 10px;
+    .footer-links-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .footer-links-col {
+        align-items: center;
+        text-align: center;
     }
 
     .social-icons {
-        flex-wrap: wrap; /* Allow icons to wrap */
-    }
-}
-
-/* Optional: Tablet/Medium screens (e.g., between 768px and 1024px) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .container {
-        max-width: 960px;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
-
-    .banner-title {
-        font-size: 3.5rem;
-    }
-
-    /* For tablet, could be 2 or 3 columns depending on design preference */
-    .plant-cards-grid {
-        grid-template-columns: repeat(2, 1fr); /* Example: 2 columns for tablet */
-    }
-
-    .deal-cards-grid {
-        grid-template-columns: repeat(2, 1fr); /* Example: 2 columns for tablet */
-    }
-
-    /* For tablet, some sections might still stack vertically if preferred for better readability */
-    .plants-lover-section, .banner {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .plants-lover-image-container, .banner-image {
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .plants-lover-content, .banner-content {
-        padding-right: 0;
-        text-align: center; /* Center align content in stacked layout */
-    }
-
-    .banner-content .btn-primary {
-        float: none; /* Remove float for centered layout */
-    }
-
-    .plants-lover-content ul li {
-        text-align: center; /* Center align list items */
-        padding-left: 0;
-    }
-    .plants-lover-content ul li::before {
-        display: block; /* Make custom bullet centerable */
-        position: static;
-        margin-bottom: 5px; /* Space between bullet and text */
+        flex-wrap: wrap;
     }
 }
