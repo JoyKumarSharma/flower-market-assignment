@@ -430,11 +430,14 @@ nav {
     color: #fff;
 }
 
+.section-title {
+    color: #fff;
+}
 .join-form {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 0px;
     margin-top: 40px;
     max-width: 600px;
     margin-left: auto;
@@ -624,6 +627,11 @@ footer .logo-title {
         order: 2;
         text-align: left;
     }
+    .section-title-plant-love{
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #111827;
+    }
 
     .plants-lover-image-container {
         margin-bottom: 30px;
@@ -688,7 +696,7 @@ footer .logo-title {
 
 /* plants lover edited design ekane  */
 .plants-lover-section {
-    background-color: rgba(233, 90, 8, 0.05);
+    background-color: rgb(241, 236, 233);
     gap: 50px;
     display: flex;
     align-items: center;
